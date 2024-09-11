@@ -3,11 +3,13 @@ export const UnmountWeatherApp = (
   callback: (data: {
     latitude: number | null;
     longitude: number | null;
+    weatherData: { [key: string]: any } | null;
   }) => void,
   latitude: number | null,
-  longitude: number | null
+  longitude: number | null,
+  weatherData: { [key: string]: any } | null
 ) => {
-  callback({ latitude, longitude });
+  callback({ latitude, longitude, weatherData });
 
   // Clean up React DOM
   const container = document.getElementById(containerId);

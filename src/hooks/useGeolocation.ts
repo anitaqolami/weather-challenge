@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 export const useGeolocation = () => {
   const [latitude, setLatitude] = useState<number | null>(null);
   const [longitude, setLongitude] = useState<number | null>(null);
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState<string | undefined>();
 
   useEffect(() => {
     if (navigator.geolocation) {
@@ -13,7 +13,7 @@ export const useGeolocation = () => {
           setLongitude(position.coords.longitude);
         },
         (err) => {
-          setError(err.message);
+          setError((err as GeolocationPositionError)?.message);
         },
         {
           enableHighAccuracy: true,

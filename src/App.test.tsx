@@ -1,9 +1,4 @@
 import { render, screen } from "@testing-library/react";
-// import { act } from "react";
-
-// import * as React from 'react'
-// import { DeprecatedReactTestUtils } from "react-dom/test-utils";
-// import * as DeprecatedReactTestUtils from "react-dom/test-utils";
 
 import App from "./App";
 
